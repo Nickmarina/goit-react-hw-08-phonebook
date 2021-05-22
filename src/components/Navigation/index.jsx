@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { pathes } from '../../services/pathes';
+import UserMenu from '../UserMenu';
+import AuthNav from '../AuthNav';
 import useStyles from './styles';
 
 const Navigation = () => {
@@ -23,22 +25,8 @@ const Navigation = () => {
           Contacts
         </NavLink>
       </div>
-      <div>
-        <NavLink
-          to={pathes.register}
-          className={classes.link}
-          activeClassName={classes.linkActive}
-        >
-          Register
-        </NavLink>
-        <NavLink
-          to={pathes.login}
-          className={classes.link}
-          activeClassName={classes.linkActive}
-        >
-          Login
-        </NavLink>
-      </div>
+      {/* {isAuthenticated ?<UserMenu/> : <AuthNav />} */}
+      <AuthNav />
     </div>
   );
 };

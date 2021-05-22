@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts-operations';
+import { addContact } from '../../redux/contacts/contacts-operations';
 import shortid from 'shortid';
 import useStyles from './styles';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';

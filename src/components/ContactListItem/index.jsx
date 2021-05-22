@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contacts-operations';
+import { deleteContact } from '../../redux/contacts/contacts-operations';
 import useStyles from './styles';
 import PersonAddDisabledIcon from '@material-ui/icons/PersonAddDisabled';
-import { getContactById } from '../../redux/contacts-selectors';
+import { getContactById } from '../../redux/contacts/contacts-selectors';
 
 const ContactListItem = ({ id }) => {
   const classes = useStyles();
