@@ -1,21 +1,26 @@
+import useStyles from './styles';
+
 const RegisterView = () => {
+  const classes = useStyles();
   return (
     <div>
-      <h1>Register Page</h1>
-      <form>
-        <label>
-          Name
-          <input type="text" />
+      <h1 className={classes.mainTitle}>Register Page</h1>
+      <form className={classes.form}>
+        <label className={classes.inputContainer}>
+          <h3 className={classes.title}>Name</h3>
+          <input className={classes.input} type="text" />
         </label>
-        <label>
-          Email
-          <input type="text" />
+        <label className={classes.inputContainer}>
+          <h3 className={classes.title}>Email</h3>
+          <input className={classes.input} type="text" />
         </label>
-        <label>
-          Password
-          <input type="text" />
+        <label className={classes.inputContainer}>
+          <h3 className={classes.title}>Password</h3>
+          <input className={classes.input} type="text" />
         </label>
-        <button type="submit">Register</button>
+        <button className={classes.btn} type="submit">
+          Register
+        </button>
       </form>
     </div>
   );
