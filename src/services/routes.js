@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import { pathes } from './pathes';
 
 const HomeView = lazy(
   () => import('../pages/HomeView') /* webpackChunkName: "HomeView" */,
@@ -19,24 +20,25 @@ const PhonebookView = lazy(
 
 export const routes = [
   {
-    path: '/',
+    path: `${pathes.home}`,
     label: 'Home View',
     component: HomeView,
+    exact: true,
   },
   {
-    path: '/register',
+    path: `${pathes.register}`,
     label: 'Register View',
     component: RegisterView,
   },
 
   {
-    path: '/login',
+    path: `${pathes.login}`,
     label: 'Login View',
     component: LoginView,
   },
 
   {
-    path: '/contacts',
+    path: `${pathes.contacts}`,
     label: 'Phonebook View',
     component: PhonebookView,
   },
