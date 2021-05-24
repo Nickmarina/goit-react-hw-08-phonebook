@@ -21,13 +21,15 @@ const Navigation = () => {
         >
           Home
         </NavLink>
-        <NavLink
-          to={pathes.contacts}
-          className={classes.link}
-          activeClassName={classes.linkActive}
-        >
-          Contacts
-        </NavLink>
+        {authenticated ? (
+          <NavLink
+            to={pathes.contacts}
+            className={classes.link}
+            activeClassName={classes.linkActive}
+          >
+            Contacts
+          </NavLink>
+        ) : null}
       </div>
       {authenticated ? <UserMenu /> : <AuthNav />}
     </div>
