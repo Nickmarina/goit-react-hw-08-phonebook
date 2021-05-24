@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { login } from '../../redux/auth/auth-operations';
 import useStyles from './styles';
 
 const LoginView = () => {
@@ -13,7 +14,11 @@ const LoginView = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+    const user = {
+      email,
+      password,
+    };
+    dispatch(login(user));
     setEmail('');
     setPassword('');
   };
@@ -28,6 +33,7 @@ const LoginView = () => {
             className={classes.input}
             type="email"
             value={email}
+            placeholder="Enter your email"
             onChange={handleChangeEmail}
           />
         </label>
@@ -37,6 +43,7 @@ const LoginView = () => {
             className={classes.input}
             type="text"
             value={password}
+            placeholder="Enter your password"
             onChange={handleChangePassword}
           />
         </label>

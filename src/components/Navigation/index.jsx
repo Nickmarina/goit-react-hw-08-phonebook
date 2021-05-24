@@ -25,8 +25,8 @@ const Navigation = () => {
           Contacts
         </NavLink>
       </div>
-      {/* {isAuthenticated ?<UserMenu/> : <AuthNav />} */}
       <AuthNav />
+      {/* <UserMenu/> */}
     </div>
   );
 };

@@ -27,7 +27,7 @@ const user = createReducer(initialState.user, {
   [registerSuccess]: (_, { payload }) => payload.user,
   [loginSuccess]: (_, { payload }) => payload.user,
   [logoutSuccess]: () => initialState.user,
-  // [authActions.getCurrentUserSuccess]: (_, { payload }) => payload,
+  // [getCurrentUserSuccess]: (_, { payload }) => payload,
 });
 
 const token = createReducer(initialState.token, {

@@ -6,8 +6,8 @@ import { getContacts } from '../../redux/contacts/contacts-selectors';
 const Filter = () => {
   const classes = useStyles();
   const contacts = useSelector(getContacts);
-  console.log(contacts.length);
   const dispatch = useDispatch();
+
   const handleFilter = e => dispatch(filterContacts(e.target.value));
 
   if (contacts.length > 0) {

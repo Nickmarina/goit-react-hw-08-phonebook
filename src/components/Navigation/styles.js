@@ -8,6 +8,7 @@ const useStyles = createUseStyles({
     marginBottom: 10,
     paddingTop: 20,
     justifyContent: 'space-between',
+    alignItems: 'baseline',
   },
   link: {
     margin: 0,

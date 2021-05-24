@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/auth/auth-operations';
 import useStyles from './styles';
 
 const RegisterView = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,8 +13,18 @@ const RegisterView = () => {
   const handleChangeName = e => setName(e.target.value);
   const handleChangeEmail = e => setEmail(e.target.value);
   const handleChangePassword = e => setPassword(e.target.value);
+
   const handleSubmit = e => {
     e.preventDefault();
+    const user = {
+      name,
+      email,
+      password,
+    };
+    dispatch(register(user));
+    setName('');
+    setEmail('');
+    setPassword('');
   };
 
   return (
@@ -25,6 +38,7 @@ const RegisterView = () => {
             type="text"
             value={name}
             onChange={handleChangeName}
+            placeholder="Enter your name"
           />
         </label>
         <label className={classes.inputContainer}>
@@ -34,6 +48,7 @@ const RegisterView = () => {
             type="email"
             value={email}
             onChange={handleChangeEmail}
+            placeholder="Enter your email"
           />
         </label>
         <label className={classes.inputContainer}>
@@ -43,6 +58,7 @@ const RegisterView = () => {
             type="text"
             value={password}
             onChange={handleChangePassword}
+            placeholder="Enter a password (min 7 symbols)"
           />
         </label>
         <button className={classes.btn} type="submit">

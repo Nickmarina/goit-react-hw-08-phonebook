@@ -2,7 +2,6 @@ import axios from 'axios';
 import * as actions from './auth-actions';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/users';
-// axios.defaults.baseURL = 'https://goit-phonebook-api.herokuapp.com/users';
 
 const token = {
   set(token) {
@@ -53,11 +52,11 @@ export const logout = () => (dispatch, getState) => {
     .catch(error => dispatch(actions.logoutError(error.message)));
 };
 
-// export const getCurrentUser =(payload)=>(dispatch,getState) =>{
-//   dispatch(actions.getCurrentUserRequest());
+export const getCurrentUser = payload => (dispatch, getState) => {
+  dispatch(actions.getCurrentUserRequest());
 
-//   axios
-//   .get('./current', payload)
-//   .then(({data})=> dispatch(actions.getCurrentUserSuccess(data)))
-//   .catch((error)=>dispatch(actions.getCurrentUserError(error.message)))
-// }
+  axios
+    .get('./current', payload)
+    .then(({ data }) => dispatch(actions.getCurrentUserSuccess(data)))
+    .catch(error => dispatch(actions.getCurrentUserError(error.message)));
+};
