@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { pathes } from '../../services/pathes';
-// import {useEffect} from 'react';
 import { isAuthenticated } from '../../redux/auth/auth-selectors';
 import UserMenu from '../UserMenu';
 import AuthNav from '../AuthNav';
@@ -9,9 +9,7 @@ import useStyles from './styles';
 const Navigation = () => {
   const classes = useStyles();
 
-  // const isAuthenticated =()=> Boolean(token);
-  // useEffect((isAuthenticated)=>{},token);
-
+  const authenticated = useSelector(isAuthenticated);
   return (
     <div className={classes.nav}>
       <div>
@@ -31,8 +29,7 @@ const Navigation = () => {
           Contacts
         </NavLink>
       </div>
-      {isAuthenticated ? <UserMenu /> : <AuthNav />}
-      {/* <AuthNav/ > */}
+      {authenticated ? <UserMenu /> : <AuthNav />}
     </div>
   );
 };
