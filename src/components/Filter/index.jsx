@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { filterContacts } from '../../redux/contacts/contacts-actions';
 import useStyles from './styles';
-import { getContacts } from '../../redux/contacts/contacts-selectors';
+import { contacts } from '../../redux/contacts/contacts-selectors';
 
 const Filter = () => {
   const classes = useStyles();
-  const contacts = useSelector(getContacts);
+  const contactsList = useSelector(contacts);
   const dispatch = useDispatch();
 
   const handleFilter = e => dispatch(filterContacts(e.target.value));
 
-  if (contacts.length > 0) {
+  if (contactsList.length > 0) {
     return (
       <div>
         <h4 className={classes.title}>Find contacts by name</h4>
