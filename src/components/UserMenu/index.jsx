@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { userName } from '../../redux/auth/auth-selectors';
 import { logout } from '../../redux/auth/auth-operations';
@@ -12,7 +13,7 @@ const UserMenu = () => {
 
   return (
     <div className={classes.container}>
-      <span className={classes.title}>Hello, One {userName}</span>
+      <span className={classes.title}>Hello, {userName}</span>
       <button className={classes.btn} type="button" onClick={onLogout}>
         <span className={classes.btnText}>Logout</span>
         <ExitToAppIcon />

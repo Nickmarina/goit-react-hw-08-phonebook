@@ -10,8 +10,6 @@ const PhonebookView = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(getContacts()), [dispatch]);
-
   return (
     <div className={classes.main}>
       <ContactForm />
